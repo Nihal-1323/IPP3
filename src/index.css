@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f0f0f] text-[#eee];
+  }
+}
+
+.image-render-pixel {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.workspace {
+  @apply bg-[#111] overflow-hidden relative cursor-crosshair flex items-center justify-center;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.hud-panel {
+  @apply rounded-lg border border-white/10 bg-black/80 backdrop-blur-xl p-4 text-white shadow-2xl transition-all duration-300;
+}
+
+.hud-label {
+  @apply text-[9px] font-black uppercase text-zinc-500 tracking-[0.2em] mb-1 block;
+}
+
+.hud-value {
+  @apply font-mono text-xs font-bold text-yellow-400;
+}
+
+.brutalist-button {
+  @apply bg-[#222] text-[#eee] border-none p-2 px-4 font-black uppercase text-[10px] cursor-pointer transition-all hover:bg-[#333] active:scale-95;
+}
+
+.brutalist-button-primary {
+  @apply bg-yellow-400 text-black hover:bg-yellow-300;
+}
+
+.matrix-grid {
+  @apply grid grid-cols-3 gap-1;
+}
+
+.matrix-cell {
+  @apply w-8 h-8 bg-zinc-800 border border-white/5;
+}
+
+.matrix-cell-active {
+  @apply bg-yellow-400;
+}
+
+/* Scroll Hide */
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom UI Layout Classes */
+.side-panel {
+  @apply w-80 bg-[#1a1a1a] border-l border-white/10 flex flex-col;
+}
+
+.controls-bar {
+  @apply h-16 bg-[#111] border-t border-white/10 flex items-center gap-4 px-6;
+}
+
+.comparison-area {
+  @apply h-32 bg-[#111] border-t border-white/10 flex justify-around items-center p-2;
+}

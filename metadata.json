@@ -1,0 +1,6 @@
+{
+  "name": "Remix: MorphoVision Lab",
+  "description": "An interactive visual laboratory for exploring morphological binary operations, shape analysis, and feature detection algorithms in computer vision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
